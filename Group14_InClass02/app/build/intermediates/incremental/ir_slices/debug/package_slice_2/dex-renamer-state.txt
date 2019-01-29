@@ -1,0 +1,4 @@
+#Mon Jan 28 20:17:46 EST 2019
+base.0=C\:\\Users\\Jacob Greene's Lapto\\Documents\\GitHub\\MobileApplicationDesign\\Group14_InClass02\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
+path.0=classes.dex
+renamed.0=classes.dex
