@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,14 +22,18 @@ public class MainActivity extends AppCompatActivity {
     public static final int REQ_CODE2 = 101;
     public static final String AVATAR_KEY = "AVATAR_KEY";
     public static final String STUDENT_KEY = "STUDENT_KEY";
-    int avatar;
+    int avatar = R.drawable.select_image;
     ImageView iv;
 
+    int rbID;
+    public  static final int CHECKED_ID = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setTitle("My Profile");
 
         firstName = findViewById(R.id.editTextFirstName);
         lastName = findViewById(R.id.editTextLastName);
@@ -42,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == -1){
-                    department = "empty";
+
                 }
                 else {
                     rb = findViewById(checkedId);
                     department = rb.getText().toString();
+                    rbID = checkedId;
                 }
 
             }
@@ -77,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     studentID.setError("Student ID should be of 9 Digits");
                 }
-                else if (department.equals("empty")){
+                else if (department== null){
 
                     Toast.makeText(MainActivity.this, "Select a Department!", Toast.LENGTH_SHORT).show();
                 }
@@ -89,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     String avatarID = Integer.toString(avatar);
 
                     Intent intent = new Intent(MainActivity.this, Display.class);
-                    intent.putExtra(STUDENT_KEY, new Student(avatarID, first, last, studentNo,department));
+                    intent.putExtra(STUDENT_KEY, new Student(avatarID, first, last, studentNo,department, rbID));
                     startActivityForResult(intent, REQ_CODE2 );
                 }
 
@@ -108,6 +114,21 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK){
                    avatar = Integer.parseInt(data.getExtras().getString(AVATAR_KEY));
                    iv.setImageResource(avatar);
+                   Log.d("demo", "Value of avatar : "+avatar);
+            }
+        }
+        else if (requestCode == REQ_CODE2){
+            if(resultCode == RESULT_OK){
+
+                Student student = (Student) data.getExtras().getSerializable(STUDENT_KEY);
+
+                firstName.setText(student.firstName);
+                lastName.setText(student.lastName);
+                studentID.setText(student.studentID);
+
+                iv.setImageResource(Integer.parseInt(student.avatar));
+                rg.check(student.rbID);
+
             }
         }
     }

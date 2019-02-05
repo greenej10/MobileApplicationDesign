@@ -24,96 +24,102 @@ public class SelectAvatar extends AppCompatActivity {
         findViewById(R.id.f1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer avatar = R.id.f1;
+                Integer avatar = R.drawable.avatar_f_1;
                 String key = avatar.toString();
                 if(avatar == 0){
                     setResult(RESULT_CANCELED);
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, key);
                     setResult(RESULT_OK, intent);
                 }
+                finish();
             }
         });
 
         findViewById(R.id.f2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer avatar = R.id.f2;
+                Integer avatar = R.drawable.avatar_f_2;
                 String key = avatar.toString();
                 if(key  == null){
                     setResult(RESULT_CANCELED);
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, key);
                     setResult(RESULT_OK, intent);
                 }
+                finish();
             }
         });
 
         findViewById(R.id.f3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer avatar = R.id.f3;
+                Integer avatar = R.drawable.avatar_f_3;
                 String key = avatar.toString();
                 if(key  == null){
                     setResult(RESULT_CANCELED);
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, key);
                     setResult(RESULT_OK, intent);
                 }
+                finish();
             }
         });
 
         findViewById(R.id.m1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer avatar = R.id.m1;
+                Integer avatar = R.drawable.avatar_m_1;
                 String key = avatar.toString();
                 if(key  == null){
                     setResult(RESULT_CANCELED);
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, key);
                     setResult(RESULT_OK, intent);
                 }
+                finish();
             }
         });
 
         findViewById(R.id.m2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer avatar = R.id.m2;
+                Integer avatar = R.drawable.avatar_m_2;
                 String key = avatar.toString();
                 if(key  == null){
                     setResult(RESULT_CANCELED);
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, key);
                     setResult(RESULT_OK, intent);
                 }
+                finish();
             }
         });
 
         findViewById(R.id.m3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer avatar = R.id.m3;
+                Integer avatar = R.drawable.avatar_m_3;
                 String key = avatar.toString();
                 if(key  == null){
                     setResult(RESULT_CANCELED);
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, key);
                     setResult(RESULT_OK, intent);
                 }
+                finish();
             }
         });
     }
