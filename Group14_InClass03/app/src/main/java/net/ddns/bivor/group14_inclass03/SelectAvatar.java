@@ -31,7 +31,7 @@ public class SelectAvatar extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
                     setResult(RESULT_OK, intent);
                 }
             }
@@ -47,7 +47,7 @@ public class SelectAvatar extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
                     setResult(RESULT_OK, intent);
                 }
             }
@@ -63,7 +63,7 @@ public class SelectAvatar extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
                     setResult(RESULT_OK, intent);
                 }
             }
@@ -79,7 +79,7 @@ public class SelectAvatar extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
                     setResult(RESULT_OK, intent);
                 }
             }
@@ -95,7 +95,7 @@ public class SelectAvatar extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
                     setResult(RESULT_OK, intent);
                 }
             }
@@ -111,7 +111,7 @@ public class SelectAvatar extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent();
-                    intent.putExtra(AVATAR_KEY, avatar);
+                    intent.putExtra(MainActivity.AVATAR_KEY, avatar);
                     setResult(RESULT_OK, intent);
                 }
             }
