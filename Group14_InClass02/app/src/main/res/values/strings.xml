@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Group14_InClass02</string>
+    <string name="BMIHeading">Body Mass Index (BMI)</string>
 </resources>
