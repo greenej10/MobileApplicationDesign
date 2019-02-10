@@ -203,7 +203,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="8dp"
@@ -212,17 +212,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textViewStatus"
-        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:layout_constraintVertical_bias="0.229" />
 
     <TextView
         android:id="@+id/textViewStatus"
-        android:layout_width="127dp"
-        android:layout_height="25dp"
+        android:layout_width="145dp"
+        android:layout_height="30dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="52dp"
         android:layout_marginBottom="8dp"
         android:background="@color/green"
         android:text="@string/statusDefault"
@@ -233,7 +232,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar"
-        app:layout_constraintVertical_bias="0.236" />
+        app:layout_constraintVertical_bias="0.218" />
 
     <ProgressBar
         android:id="@+id/progressBar"

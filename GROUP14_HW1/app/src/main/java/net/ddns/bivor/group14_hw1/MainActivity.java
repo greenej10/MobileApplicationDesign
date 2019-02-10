@@ -1,6 +1,6 @@
 package net.ddns.bivor.group14_hw1;
 
-import android.app.ActionBar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,11 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+//        setTitle("BAC Calculator");
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayShowHomeEnabled(true);
+//        actionBar.setIcon(R.mipmap.ic_launcher_foreground);
 
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         getSupportActionBar().setTitle("BAC Calculator");
 
-        //toolbar.setLogo(R.mipmap.ic_launcher_foreground);
+        toolbar.setLogo(R.drawable.wine);
 
 
 
