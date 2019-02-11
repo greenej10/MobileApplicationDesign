@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
 
+                        textViewBACLevel.setText(""+BACLevel);
                         textViewStatus.setText("Over the limit!");
                         textViewStatus.setBackgroundColor(getResources().getColor(R.color.red) );
                         buttonAdd.setEnabled(false);
@@ -193,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                     else {
 
                         accumulatedValue = 0;
-                        textViewBACLevel.setText(""+0.25);
+                        textViewBACLevel.setText(""+BACLevel);
                         textViewStatus.setText("Over the limit!");
                         textViewStatus.setBackgroundColor(getResources().getColor(R.color.red) );
                         buttonAdd.setEnabled(false);
