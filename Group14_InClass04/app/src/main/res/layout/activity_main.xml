@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="234dp"
+        android:layout_width="wrap_content"
         android:layout_height="256dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -26,7 +26,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:background="@android:color/black"
+        android:background="@color/buttonColor"
         android:text="@string/buttonAsync"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/black"
+        android:background="@color/buttonColor"
         android:text="@string/buttonThread"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
