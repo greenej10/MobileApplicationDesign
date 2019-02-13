@@ -1,3 +1,5 @@
+package net.ddns.bivor.group14_hw02;
+
 import java.util.Random;
 
 public class Util {
