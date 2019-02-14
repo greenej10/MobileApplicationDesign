@@ -157,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
                                 Passwords passwordThread = new Passwords(arrayListPasswordThread);
                                 intent.putExtra(PASSWORD_THREAD,passwordThread);
 
+                                FLAG_THREAD =1;
+                                
                                 if (FLAG_ASYNC==1){
                                     pd.dismiss();
                                     startActivity(intent);
@@ -166,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
 
                             case DoWork.STATUS_PROGRESS:
-                                progressValue+= arrayListPasswordThread.size();
+                                progressValue+= 1;
                                 pd.setProgress(progressValue);
                                 break;
                         }
@@ -206,8 +208,6 @@ public class MainActivity extends AppCompatActivity {
                 handler.sendMessage(message);
             }
 
-            FLAG_THREAD =1;
-
             Message stopMessage = new Message();
             stopMessage.what = STATUS_STOP;
             handler.sendMessage(stopMessage);
@@ -224,10 +224,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(ArrayList<String> strings) {
-            FLAG_ASYNC =1;
-
             Passwords passwordAsync = new Passwords(arrayListPasswordAsync);
             intent.putExtra(PASSWORD_ASYNC,passwordAsync);
+
+            FLAG_ASYNC =1;
 
             if (FLAG_THREAD==1){
                 pd.dismiss();
