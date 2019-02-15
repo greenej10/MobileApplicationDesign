@@ -8,10 +8,13 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.util.*;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
@@ -20,10 +23,11 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textViewCountThread, textViewCountAsync, textViewLengthThread, getTextViewLengthAsync;
+    TextView textViewCountThread, textViewCountAsync, textViewLengthThread, getTextViewLengthAsync, textViewPB;
     SeekBar sbCountThread, sbLengthThread, sbCountAsync, sbLengthAsync;
     Button buttonGenerate;
     ProgressDialog pd;
+    ProgressBar pb;
     Handler handler;
     ExecutorService threadPool;
     int countThread=1, countAsync=1, lengthThread=7, lengthAsync=7, progressValue=0;
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         textViewLengthThread = findViewById(R.id.textViewLengthThread);
         textViewCountAsync = findViewById(R.id.textViewCountAsync);
         getTextViewLengthAsync = findViewById(R.id.textViewLengthAsync);
+        textViewPB = findViewById(R.id.textViewPB);
 
         sbCountThread = findViewById(R.id.seekBarCountThread);
         sbLengthThread = findViewById(R.id.seekBarLengthThread);
@@ -58,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         pd.setMessage("Generating Passwords");
         pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         pd.setCancelable(false);
+
+        pb = findViewById(R.id.progressBar);
+
+
 
         intent = new Intent(MainActivity.this,GeneratedPasswordsActivity.class);
 
@@ -140,9 +149,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Toast.makeText(MainActivity.this, "Generating Started", Toast.LENGTH_SHORT).show();
                 pd.setMax(countThread+countAsync);
                 pd.setProgress(0);
-                //pd.show();
+
+                pb.setMax(countThread+countAsync);
+                pb.setProgress(0);
+
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                 handler =new Handler(new Handler.Callback() {
                     @Override
@@ -150,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                         switch (msg.what){
 
                             case DoWork.STATUS_START:
-                                pd.show();
+                                //pd.show();
                                 break;
 
                             case DoWork.STATUS_STOP:
@@ -160,7 +175,8 @@ public class MainActivity extends AppCompatActivity {
                                 FLAG_THREAD =1;
                                 
                                 if (FLAG_ASYNC==1){
-                                    pd.dismiss();
+                                    //pd.dismiss();
+                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -169,7 +185,9 @@ public class MainActivity extends AppCompatActivity {
 
                             case DoWork.STATUS_PROGRESS:
                                 progressValue+= 1;
-                                pd.setProgress(progressValue);
+                                pb.setProgress(progressValue);
+                                textViewPB.setText(""+(progressValue*100)/(countThread+countAsync)+" %");
+                                //pd.setProgress(progressValue);
                                 break;
                         }
                         return false;
@@ -230,7 +248,8 @@ public class MainActivity extends AppCompatActivity {
             FLAG_ASYNC =1;
 
             if (FLAG_THREAD==1){
-                pd.dismiss();
+                //pd.dismiss();
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 startActivity(intent);
                 finish();
             }
@@ -240,7 +259,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             progressValue+=values[0];
-            pd.setProgress(progressValue);
+            //pd.setProgress(progressValue);
+            pb.setProgress(progressValue);
+            textViewPB.setText(""+(progressValue*100)/(countThread+countAsync)+" %");
         }
 
         @Override
@@ -252,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i=0; i<count; i++){
                 arrayListPasswordAsync.add(Util.getPassword(length));
-                publishProgress(i);
+                publishProgress(1);
             }
 
             return arrayListPasswordAsync;

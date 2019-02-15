@@ -10,4 +10,5 @@
     <string name="buttonFinish">Finish</string>
     <string name="countDefault">1</string>
     <string name="lengthDefault">7</string>
+    <string name="progressBarDefault">0 %</string>
 </resources>
