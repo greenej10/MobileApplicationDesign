@@ -2,6 +2,7 @@ package net.ddns.bivor.group14_hw02;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
@@ -23,7 +24,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textViewCountThread, textViewCountAsync, textViewLengthThread, getTextViewLengthAsync, textViewPB;
+    TextView textViewCountThread, textViewCountAsync, textViewLengthThread, textViewLengthAsync, textViewPB;
     SeekBar sbCountThread, sbLengthThread, sbCountAsync, sbLengthAsync;
     Button buttonGenerate;
     ProgressDialog pd;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         textViewCountThread = findViewById(R.id.textViewCountThread);
         textViewLengthThread = findViewById(R.id.textViewLengthThread);
         textViewCountAsync = findViewById(R.id.textViewCountAsync);
-        getTextViewLengthAsync = findViewById(R.id.textViewLengthAsync);
+        textViewLengthAsync = findViewById(R.id.textViewLengthAsync);
         textViewPB = findViewById(R.id.textViewPB);
 
         sbCountThread = findViewById(R.id.seekBarCountThread);
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         sbLengthAsync.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    getTextViewLengthAsync.setText(""+(progress+7));
+                    textViewLengthAsync.setText(""+(progress+7));
                     lengthAsync = progress+7;
             }
 
@@ -150,11 +151,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(MainActivity.this, "Generating Started", Toast.LENGTH_SHORT).show();
+
                 pd.setMax(countThread+countAsync);
                 pd.setProgress(0);
 
                 pb.setMax(countThread+countAsync);
                 pb.setProgress(0);
+
+                visibilityItems(View.INVISIBLE);
 
                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                         WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
@@ -200,6 +204,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void visibilityItems(int a){
+
+        findViewById(R.id.textView).setVisibility(a);
+        findViewById(R.id.textView2).setVisibility(a);
+        findViewById(R.id.textView4).setVisibility(a);
+        findViewById(R.id.textView6).setVisibility(a);
+        findViewById(R.id.textView7).setVisibility(a);
+        findViewById(R.id.textView9).setVisibility(a);
+        findViewById(R.id.textView).setVisibility(a);
+        textViewCountThread.setVisibility(a);
+        textViewLengthThread.setVisibility(a);
+        textViewCountAsync.setVisibility(a);
+        textViewLengthAsync.setVisibility(a);
+        sbCountThread.setVisibility(a);
+        sbLengthThread.setVisibility(a);
+        sbCountAsync.setVisibility(a);
+        sbLengthAsync.setVisibility(a);
     }
 
     class DoWork implements Runnable{
