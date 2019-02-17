@@ -206,6 +206,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+//    public void updatingProgress(int a){
+//
+//    }
+
     public void visibilityItems(int a){
 
         findViewById(R.id.textView).setVisibility(a);
