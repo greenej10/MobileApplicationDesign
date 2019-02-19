@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         pd.setCancelable(false);
 
         pb = findViewById(R.id.progressBar);
+        pb.setVisibility(View.INVISIBLE);
+        textViewPB.setVisibility(View.INVISIBLE);
 
 
 
@@ -155,6 +157,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(MainActivity.this, "Generating Started", Toast.LENGTH_SHORT).show();
+
+                pb.setVisibility(View.VISIBLE);
+                textViewPB.setVisibility(View.VISIBLE);
 
                 pd.setMax(countThread+countAsync);
                 pd.setProgress(0);
