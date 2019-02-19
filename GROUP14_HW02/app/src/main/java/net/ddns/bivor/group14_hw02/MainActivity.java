@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     int countThread=1, countAsync=1, lengthThread=7, lengthAsync=7, progressValue=0;
     int FLAG_THREAD =0, FLAG_ASYNC = 0;
 
+    ProgressTracker pT;
+
     ArrayList<String> arrayListPasswordThread;
     ArrayList<String> arrayListPasswordAsync;
 
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Password Generator");
+
+        pT = new ProgressTracker(0);
 
         textViewCountThread = findViewById(R.id.textViewCountThread);
         textViewLengthThread = findViewById(R.id.textViewLengthThread);
@@ -188,10 +192,13 @@ public class MainActivity extends AppCompatActivity {
                                 break;
 
                             case DoWork.STATUS_PROGRESS:
-                                progressValue+= 1;
-                                pb.setProgress(progressValue);
-                                textViewPB.setText(""+(progressValue*100)/(countThread+countAsync)+" %");
-                                //pd.setProgress(progressValue);
+                                synchronized (pT) {
+                                    pT.setProgressVal(pT.getProgressVal()+1);
+                                    //progressValue += 1;
+                                    pb.setProgress(pT.getProgressVal());
+                                    textViewPB.setText("" + (pT.getProgressVal() * 100) / (countThread + countAsync) + " %");
+                                    //pd.setProgress(progressValue);
+                                }
                                 break;
                         }
                         return false;
@@ -206,9 +213,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    public void updatingProgress(int a){
-//
-//    }
+    public class ProgressTracker {
+
+        int progressVal=0;
+
+        public ProgressTracker(int progressVal) {
+            this.progressVal = progressVal;
+        }
+
+        public int getProgressVal() {
+            return progressVal;
+        }
+
+        public void setProgressVal(int progressVal) {
+            this.progressVal = progressVal;
+        }
+    }
+
 
     public void visibilityItems(int a){
 
@@ -285,10 +306,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
-            progressValue+=values[0];
-            //pd.setProgress(progressValue);
-            pb.setProgress(progressValue);
-            textViewPB.setText(""+(progressValue*100)/(countThread+countAsync)+" %");
+            synchronized (pT){
+                pT.setProgressVal(pT.getProgressVal()+values[0]);
+                //progressValue+=values[0];
+                //pd.setProgress(progressValue);
+                pb.setProgress(pT.getProgressVal());
+                textViewPB.setText(""+(pT.getProgressVal()*100)/(countThread+countAsync)+" %");
+            }
         }
 
         @Override
