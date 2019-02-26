@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">800709620_InClass6</string>
+    <string name="strGo">GO</string>
+    <string name="strCategories">Categories</string>
+    <string name="strHeader" >Headline</string>
+    <string name="strPublished">Published</string>
+    <string name="strOutOf">1 out of 20</string>
+</resources>
