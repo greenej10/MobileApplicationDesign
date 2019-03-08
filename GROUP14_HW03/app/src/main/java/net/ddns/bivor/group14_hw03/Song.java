@@ -1,17 +1,19 @@
 package net.ddns.bivor.group14_hw03;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
 
-public class Song {
+public class Song implements Serializable {
 
     String trackName, primaryGenreName, artistName, collectionName, trackPrice, collectionPrice, dateTime, artworkUrl100;
     Date date;
+    String state;
 
     public Song() {
     }
 
-    public Song(String trackName, String primaryGenreName, String artistName, String collectionName, String trackPrice, String collectionPrice, String dateTime,String artworkUrl100, Date date) {
+    public Song(String trackName, String primaryGenreName, String artistName, String collectionName, String trackPrice, String collectionPrice, String dateTime,String artworkUrl100, Date date, String state) {
         this.trackName = trackName;
         this.primaryGenreName = primaryGenreName;
         this.artistName = artistName;
@@ -21,6 +23,7 @@ public class Song {
         this.dateTime = dateTime;
         this.artworkUrl100 = artworkUrl100;
         this.date = date;
+        this.state = state;
     }
 
     public static Comparator<Song> COMPARE_BY_PRICE = new Comparator<Song>() {

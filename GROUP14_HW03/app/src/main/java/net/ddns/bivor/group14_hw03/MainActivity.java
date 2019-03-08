@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     String filter="date";
     ArrayList<Song> songs;
+    String keyword="";
+    int progressValue=10;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +83,28 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+//        mAdapter = new SongAdapter(songs,keyword,filter,progressValue);
         mAdapter = new SongAdapter(songs);
         recyclerView.setAdapter(mAdapter);
+
+        if(getIntent()!=null && getIntent().getExtras() != null) {
+            songs.addAll ((ArrayList<Song>) getIntent().getExtras().getSerializable(Display.SONGS_KEY2));
+//            if(songs.get(0).state =="date") {
+//                if (!switchFilter.isChecked())switchFilter.toggle();
+//            }
+//            else {
+//                if (switchFilter.isChecked())switchFilter.toggle();
+//            }
+//            keyword = getIntent().getExtras().getString(Display.KEYWORD2);
+//            filter = getIntent().getExtras().getString(Display.STATE2);
+//            progressValue = getIntent().getExtras().getInt(Display.PROGRESS_VALUE2);
+//            sb.setProgress(progressValue);
+//            textViewLimit.setText("Limit: "+ progressValue);
+//            editText.setText(keyword);
+//            if(filter=="date")switchFilter.setChecked(true);
+//            else switchFilter.setChecked(false);
+            mAdapter.notifyDataSetChanged();
+        }
 
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -109,11 +132,13 @@ public class MainActivity extends AppCompatActivity {
                 if(!isChecked){
                     filter="price";
                     Collections.sort(songs, Song.COMPARE_BY_PRICE);
+                    songs.get(0).state="price";
                     mAdapter.notifyDataSetChanged();
                 }
                 else{
                     filter="date";
                     Collections.sort(songs,Song.COMPARE_BY_DATE);
+                    songs.get(0).state="date";
                     mAdapter.notifyDataSetChanged();
                 }
             }
@@ -126,6 +151,9 @@ public class MainActivity extends AppCompatActivity {
                 if(isConnected()){
                     if(editText.getText().toString().isEmpty())editText.setError("Enter Keyword/s");
                     else {
+                        keyword = editText.getText().toString();
+                        progressValue = (sb.getProgress()+10);
+                        mAdapter.notifyDataSetChanged();
                         disableAll();
 //                        songs.clear();
                         new GetSongsAsync().execute();
@@ -144,8 +172,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editText.setText("");
-                textViewSortBy.setText(""+(sb.getProgress()+10));
                 sb.setProgress(0);
+//                Intent intent = new Intent(MainActivity.this, Display.class);
+//                startActivity(intent);
             }
         });
     }
@@ -183,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
                         sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
                         song.date = (songJson.has("releaseDate"))? sdf.parse(songJson.getString("releaseDate")): null;
-
+                        song.state = filter;
 
                         result.add(song);
                     }
