@@ -1,3 +1,9 @@
+/*
+800709620_inClass06
+MainActivity.java
+Jacob Greene
+ */
+
 package com.example.a800709620_inclass6;
 
 import android.app.Activity;
@@ -9,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
@@ -29,6 +36,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,11 +71,7 @@ public class MainActivity<articleList> extends AppCompatActivity {
     int articleNum;
     int maxArticles;
     ArrayList<Article> articleList;
-
-
-
-
-
+    TextView textViewDesc;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,12 +88,13 @@ public class MainActivity<articleList> extends AppCompatActivity {
         imageViewGallery = findViewById(R.id.imageViewGallery);
         pb = findViewById(R.id.progressBar);
         pb.setVisibility(View.INVISIBLE);
-        articleList =  new ArrayList<Article>();
+        articleList = new ArrayList<Article>();
+        textViewDesc = findViewById(R.id.textViewDesc);
 
         buttonGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isConnected()){
+                if (isConnected()) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -97,30 +104,56 @@ public class MainActivity<articleList> extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     textViewCategories.setText(categories.get(which));
                                     new AsyncTaskGetHeadlines(MainActivity.this).execute(categoryURL.get(which));
+                                    textViewHeader.setVisibility(View.VISIBLE);
                                     imageViewGallery.setVisibility(View.INVISIBLE);
                                     pb.setVisibility(View.VISIBLE);
                                 }
                             });
                     final AlertDialog alertDialog = builder.create();
                     alertDialog.show();
-                }
-                else {
+                } else {
                     Toast.makeText(MainActivity.this, "There is no internet connection", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        imageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pb.setVisibility(View.VISIBLE);
+                imageViewGallery.setVisibility(View.INVISIBLE);
+                articleNum-=1;
+                if(articleNum<0)articleNum=articleList.size()-1;
+
+                new AsyncTaskGetArticle(MainActivity.this).execute(articleNum);
+
+
+            }
+        });
+
+        imageViewNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pb.setVisibility(View.VISIBLE);
+                imageViewGallery.setVisibility(View.INVISIBLE);
+                articleNum+=1;
+                if(articleNum>articleList.size()-1)articleNum=0;
+
+                new AsyncTaskGetArticle(MainActivity.this).execute(articleNum);
+            }
+        });
     }
 
-    private boolean isConnected(){
+
+    private boolean isConnected() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if(networkInfo == null || !networkInfo.isConnected() ||
-                (networkInfo.getType()!=ConnectivityManager.TYPE_WIFI
-                        && networkInfo.getType()!=ConnectivityManager.TYPE_MOBILE)){
+        if (networkInfo == null || !networkInfo.isConnected() ||
+                (networkInfo.getType() != ConnectivityManager.TYPE_WIFI
+                        && networkInfo.getType() != ConnectivityManager.TYPE_MOBILE)) {
             return false;
         }
         return true;
-
     }
 }
 

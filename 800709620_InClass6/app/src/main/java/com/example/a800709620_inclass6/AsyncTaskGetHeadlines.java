@@ -1,15 +1,25 @@
+/*
+800709620_inClass06
+AsyncTaskGetHeadlines.java
+Jacob Greene
+ */
+
 package com.example.a800709620_inclass6;
 
 import android.app.Activity;
 import android.location.Address;
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.Toast;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -45,11 +55,16 @@ public class AsyncTaskGetHeadlines extends AsyncTask <String,Void, ArrayList<Art
                     result.add(article);
                 }
             }
-        } catch (Exception e) {
-            //Handle Exceptions
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         } finally {
-            //Close the connections
+            if(connection !=null)connection.disconnect();
         }
+
         return result;
     }
 
@@ -59,24 +74,16 @@ public class AsyncTaskGetHeadlines extends AsyncTask <String,Void, ArrayList<Art
         activity.articleList.addAll(articles);
         activity.articleNum = 0;
 
-
-        if(activity.articleList.isEmpty()){
+        if (activity.articleList.isEmpty()) {
+            Toast.makeText(activity, "No News Found", Toast.LENGTH_SHORT).show();
             activity.imageViewGallery.setImageResource(R.drawable.ic_launcher_foreground);
             activity.imageViewGallery.setVisibility(View.VISIBLE);
             activity.pb.setVisibility(View.INVISIBLE);
-        }
-        else{
-            activity.textViewHeader.setText(articles.get(activity.articleNum).title);
-            activity.textViewPublished.setText(articles.get(activity.articleNum).publishedAt);
-            activity.textViewOutOf.setText("Out Of");
-
+        } else {
+            new AsyncTaskGetArticle(activity).execute(activity.articleNum);
         }
 
-    }
 
-    public static interface IData {
-        public void handleArticles(ArrayList<Article> articles);
-        public void loadImage(Article article);
     }
 
 
