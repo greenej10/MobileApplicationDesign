@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">800709620_Midterm</string>
+    <string name="strSearch">Search</string>
+    <string name="strLimit">Limit 25</string>
+    <string name="strTrackRating">Track Rating</string>
+    <string name="strArtistRating">Artist Rating</string>
+    <string name="strSearchResults" >Search Results</string>
+    <string name="strSortBy">Sort By:</string>
+    <string name="strTrack">Track:</string>
+    <string name="strArtist">Artist:</string>
+    <string name="strAlbum">Album:</string>
+    <string name="strDate">Date:</string>
+</resources>
