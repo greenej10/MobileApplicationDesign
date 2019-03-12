@@ -37,8 +37,6 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.ViewHolder> {
 
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.song_item, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(view);
-
-
         return viewHolder;
     }
 
