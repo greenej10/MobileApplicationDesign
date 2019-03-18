@@ -189,17 +189,16 @@ public class MainActivity extends AppCompatActivity {
                 if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
 
                     String json = IOUtils.toString(connection.getInputStream(), "UTF8");
-
-                    JSONObject message = new JSONObject(json);
-
-                    JSONObject header = message.getJSONObject("header");
-
+                    JSONObject root = new JSONObject(json);
+                    JSONObject message = root.getJSONObject("message");
                     JSONObject body = message.getJSONObject("body");
 
-                    JSONArray  songs = body.getJSONArray("track_list");
-
+                    JSONArray songs = body.getJSONArray("track_list");
                     int a = songs.length();
                     for (int i=0;i<songs.length();i++) {
+
+                        JSONObject trackJson = songs.getJSONObject(i);
+                        JSONObject trackHeader = trackJson.getJSONObject("track");
                         JSONObject songJson = songs.getJSONObject(i);
                         Song song = new Song();
                         song.trackName = (songJson.has("track_name"))? songJson.getString("track_name"):"N/A";
