@@ -1,0 +1,4 @@
+#Mon Mar 11 20:47:37 EDT 2019
+base.0=C\:\\Users\\JACOB GREENE PC\\Documents\\GitHub\\MobileApplicationDesign\\800709620_Midterm\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
