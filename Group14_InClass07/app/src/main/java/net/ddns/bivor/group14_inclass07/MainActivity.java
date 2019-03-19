@@ -7,12 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity implements ExpenseAppFragment.OnFragmentInteractionListener, AddExpenseFragment.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements ExpenseAppFragment.OnFragmentInteractionListener, AddExpenseFragment.OnFragmentInteractionListener, ShowExpense.OnFragmentInteractionListener{
 
 
     public static final ArrayList<Expense> expenses = new ArrayList<>();
-    RecyclerView recyclerView;
-    RecyclerView.Adapter mAdapter;
+    public static final ArrayList<Expense> selectedExpenses = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
     }
 
     @Override
-    public void goToShowExpense() {
+    public void goToShowExpense(Expense expense) {
+        selectedExpenses.add(expense);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ShowExpense(), "tag_showExpense").commit();
     }
@@ -51,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
     public void goToExpenseOnAdd(Expense expense) {
         expenses.add(expense);
         //getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
+    }
+
+    @Override
+    public void goToExpenseFromShow() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
     }

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder>{
 
     ArrayList<Expense> mData;
+    public OnItemClickListener mListener;
 
     public ExpenseAdapter(ArrayList<Expense> mData) {
         this.mData = mData;
@@ -32,23 +33,47 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
         Expense expense = mData.get(i);
         viewHolder.textViewExpenseItem.setText(expense.name);
         viewHolder.textViewItemCost.setText("$"+ expense.amount);
+        viewHolder.expense = expense;
+        viewHolder.expenses = mData;
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mData.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView textViewExpenseItem, textViewItemCost;
+        Expense expense;
+        ArrayList<Expense> expenses;
+
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             textViewExpenseItem = itemView.findViewById(R.id.textViewExpenseItem);
             textViewItemCost = itemView.findViewById(R.id.textViewItemCost);
 
+            itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    MainActivity.expenses.remove(expense);
+                    return false;
+                }
+            });
+
 
         }
+
+        @Override
+        public void onClick(View v) {
+            
+        }
+
+    }
+
+    public interface OnItemClickListener{
+        void OnItemClick(Expense expense);
     }
 }

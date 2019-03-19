@@ -8,4 +8,13 @@ public class Expense {
     String name, category, amount;
     Date date;
 
+    public Expense() {
+    }
+
+    public Expense(String name, String category, String amount, Date date) {
+        this.name = name;
+        this.category = category;
+        this.amount = amount;
+        this.date = date;
+    }
 }

@@ -20,10 +20,11 @@ import android.view.ViewGroup;
  */
 public class ExpenseAppFragment extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
+    public OnFragmentInteractionListener mListener;
+
     RecyclerView recyclerView;
     RecyclerView.Adapter mAdapter;
-    RecyclerView.LayoutManager layoutManager;
+    //RecyclerView.LayoutManager layoutManager;
 
     public ExpenseAppFragment() {
         // Required empty public constructor
@@ -33,22 +34,24 @@ public class ExpenseAppFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_expense_app, container, false);
+        // 1. get a reference to recyclerView
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
+
+        // 2. set layoutManger
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        mAdapter = new ExpenseAdapter(MainActivity.expenses);
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_expense_app, container, false);
+        return rootView;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        recyclerView = getActivity().findViewById(R.id.recyclerview);
-        recyclerView.setHasFixedSize(true);
-
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-
-        mAdapter = new ExpenseAdapter(MainActivity.expenses);
-        recyclerView.setAdapter(mAdapter);
-        mAdapter.notifyDataSetChanged();
 
         if(MainActivity.expenses.size()>0)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.INVISIBLE);
         getActivity().findViewById(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
@@ -57,6 +60,8 @@ public class ExpenseAppFragment extends Fragment {
                 mListener.goToAddExpense();
             }
         });
+
+
     }
 
     @Override
@@ -89,6 +94,8 @@ public class ExpenseAppFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void goToAddExpense();
-        void goToShowExpense();
+        public void goToShowExpense(Expense expense);
     }
+
+    
 }

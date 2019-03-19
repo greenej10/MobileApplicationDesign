@@ -111,7 +111,8 @@ public class AddExpenseFragment extends Fragment {
                     Toast.makeText(getActivity(), "Select a Category", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(getActivity(), "Entered ELSE", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "Entered ELSE", Toast.LENGTH_SHORT).show();
+
                     expense = new Expense();
                     expense.name = editTextAddExpenseName.getText().toString();
                     expense.amount = editTextAddExpenseAmount.getText().toString();
