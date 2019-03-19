@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,7 +43,7 @@ public class ExpenseAppFragment extends Fragment {
         // 2. set layoutManger
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mAdapter = new ExpenseAdapter(MainActivity.expenses);
+        mAdapter = new ExpenseAdapter(MainActivity.expenses, communication);
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
 
@@ -52,6 +54,7 @@ public class ExpenseAppFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle("Expense App");
 
         if(MainActivity.expenses.size()>0)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.INVISIBLE);
         getActivity().findViewById(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
@@ -96,6 +99,26 @@ public class ExpenseAppFragment extends Fragment {
         void goToAddExpense();
         public void goToShowExpense(Expense expense);
     }
+    FragmentCommunication communication=new FragmentCommunication() {
+        @Override
+        public void respond(Expense expense) {
+            ShowExpense showExpense=new ShowExpense();
+            Bundle bundle=new Bundle();
+            bundle.putSerializable("EXPENSE_KEY",expense);
+            showExpense.setArguments(bundle);
+            FragmentManager manager=getFragmentManager();
+            FragmentTransaction transaction=manager.beginTransaction();
+            transaction.replace(R.id.container,showExpense)
+                    .addToBackStack(null).commit();
+        }
+
+        public void delete(Expense expense){
+            MainActivity.expenses.remove(expense);
+            mAdapter.notifyDataSetChanged();
+            if(MainActivity.expenses.size()<1)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.VISIBLE);
+        }
+
+    };
 
     
 }

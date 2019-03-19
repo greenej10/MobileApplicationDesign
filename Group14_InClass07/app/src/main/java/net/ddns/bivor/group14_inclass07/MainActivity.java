@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
 
     @Override
     public void goToExpenseOnCancel() {
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
     }
@@ -50,13 +51,14 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
     @Override
     public void goToExpenseOnAdd(Expense expense) {
         expenses.add(expense);
-        //getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
     }
 
     @Override
     public void goToExpenseFromShow() {
+        getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
     }

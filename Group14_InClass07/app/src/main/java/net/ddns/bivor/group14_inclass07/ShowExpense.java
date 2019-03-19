@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,25 +31,12 @@ public class ShowExpense extends Fragment {
 
     Expense expense;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     private OnFragmentInteractionListener mListener;
 
     public ShowExpense() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ShowExpense.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ShowExpense newInstance(String param1, String param2) {
         ShowExpense fragment = new ShowExpense();
         Bundle args = new Bundle();
@@ -59,8 +50,7 @@ public class ShowExpense extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            expense = (Expense) getArguments().getSerializable("EXPENSE_KEY");
         }
     }
 
@@ -87,7 +77,7 @@ public class ShowExpense extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         getActivity().setTitle("Show Expense");
-        expense = MainActivity.selectedExpenses.get(0);
+
         TextView textViewName  = getActivity().findViewById(R.id.textViewDetailNameValue);
         textViewName.setText(expense.name);
         TextView textViewCategory  = getActivity().findViewById(R.id.textViewDetailCategoryValue);
@@ -95,8 +85,9 @@ public class ShowExpense extends Fragment {
         TextView textViewAmount  = getActivity().findViewById(R.id.textViewDetailAmountValue);
         textViewAmount.setText("$ "+ expense.amount);
         TextView textViewDate  = getActivity().findViewById(R.id.textViewDetailDateValue);
-        String d = expense.date.toString();
-        textViewDate.setText(d);
+        SimpleDateFormat ft = new SimpleDateFormat("dd/MM/yyyy");
+        String d = ft.format(expense.date);
+        textViewDate.setText(d.substring(3,5)+"/"+d.substring(0,2)+"/"+d.substring(6,10));
 
         getActivity().findViewById(R.id.buttonClose).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,9 +1,10 @@
 package net.ddns.bivor.group14_inclass07;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Expense {
+public class Expense implements Serializable {
 
     String name, category, amount;
     Date date;
