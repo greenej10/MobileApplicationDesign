@@ -15,4 +15,7 @@
     <string name="strAmount">Amount:</string>
     <string name="strDate">Date:</string>
     <string name="strClose">Close</string>
+    <string name="expenseAppCurrentExpenses">Current Expenses:</string>
+    <string name="expenseButton1">Add</string>
+    <string name="ExpenseMessage">There is no expense to show, Please add your expenses from the menu.</string>
 </resources>

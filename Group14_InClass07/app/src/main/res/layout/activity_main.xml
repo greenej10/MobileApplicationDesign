@@ -8,13 +8,9 @@
     tools:context=".MainActivity">
 
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="net.ddns.bivor.group14_inclass07.ShowExpense"
+    <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_show_expense"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
+        android:orientation="vertical"></LinearLayout>
 </android.support.constraint.ConstraintLayout>

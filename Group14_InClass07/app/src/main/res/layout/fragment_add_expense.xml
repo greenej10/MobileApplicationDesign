@@ -86,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonAddExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextAddExpenseAmount" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -104,7 +104,7 @@
         android:layout_marginEnd="32dp"
         android:text="@string/addExpenseButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/buttonAddExpense"
         app:layout_constraintTop_toBottomOf="@+id/editTextAddExpenseAmount" />
 
 </android.support.constraint.ConstraintLayout>

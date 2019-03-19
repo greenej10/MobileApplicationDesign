@@ -3,7 +3,10 @@ package net.ddns.bivor.group14_inclass07;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,9 @@ import android.view.ViewGroup;
 public class ExpenseAppFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter mAdapter;
+    RecyclerView.LayoutManager layoutManager;
 
     public ExpenseAppFragment() {
         // Required empty public constructor
@@ -31,11 +37,26 @@ public class ExpenseAppFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_expense_app, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        recyclerView = getActivity().findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+
+        mAdapter = new ExpenseAdapter(MainActivity.expenses);
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
+        if(MainActivity.expenses.size()>0)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.goToAddExpense();
+            }
+        });
     }
 
     @Override
@@ -67,6 +88,7 @@ public class ExpenseAppFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void goToAddExpense();
+        void goToShowExpense();
     }
 }
