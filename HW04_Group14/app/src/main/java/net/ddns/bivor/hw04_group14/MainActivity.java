@@ -37,6 +37,13 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if(getSupportFragmentManager().getBackStackEntryCount()>0){
+            getSupportFragmentManager().popBackStack();
+        }
+        else super.onBackPressed();
+    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {

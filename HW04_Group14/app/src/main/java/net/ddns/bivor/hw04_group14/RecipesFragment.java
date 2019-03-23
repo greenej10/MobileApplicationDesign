@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -51,7 +52,7 @@ public class RecipesFragment extends Fragment {
         recyclerViewRecipe = (RecyclerView) rootView.findViewById(R.id.recyclerViewRecipe);
 
         // 2. set layoutManger
-        recyclerViewRecipe.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerViewRecipe.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
         mAdapter = new RecipeAdapter(recipes, communication);
         recyclerViewRecipe.setAdapter(mAdapter);
@@ -115,6 +116,7 @@ public class RecipesFragment extends Fragment {
         public void goToSearch() {
             SearchFragment searchFragment=new SearchFragment();
             FragmentManager manager=getFragmentManager();
+            manager.popBackStack();
             FragmentTransaction transaction=manager.beginTransaction();
             transaction.replace(R.id.container,searchFragment)
                     .addToBackStack(null).commit();

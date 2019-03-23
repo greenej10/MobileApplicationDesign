@@ -103,16 +103,23 @@ public class SearchFragment extends Fragment {
                     disableAll();
                     getActivity().setTitle("Recipes");
                     URL = "http://www.recipepuppy.com/api/?i=";
-                    for(int i=0;i<ingredientList.size();i++){
-                        URL+=ingredientList.get(i).trim();
-                        if(i<ingredientList.size()- 1)URL+=",";
-                        else URL+="&q="+editTextDishTitle.getText().toString().trim();
+                    if(ingredientList.size()>0){
+                        for(int i=0;i<ingredientList.size();i++){
+                            URL+=ingredientList.get(i).trim();
+                            if(i<ingredientList.size()- 1)URL+=",";
+                            else URL+="&q="+editTextDishTitle.getText().toString().trim();
+                        }
+                    }
+                    else {
+                        URL = "http://www.recipepuppy.com/api/?q="+editTextDishTitle.getText().toString().trim();
                     }
                     new getRecipeAsync().execute(URL);
                 }
                 }
         });
     }
+
+
 
     private class getRecipeAsync extends AsyncTask<String,Integer, ArrayList<Recipe>>{
         @Override
@@ -228,6 +235,7 @@ public class SearchFragment extends Fragment {
             bundle.putSerializable("RECIPES_KEY",recipes);
             recipesFragment.setArguments(bundle);
             FragmentManager manager=getFragmentManager();
+            manager.popBackStack();
             FragmentTransaction transaction=manager.beginTransaction();
             transaction.replace(R.id.container,recipesFragment)
                     .addToBackStack(null).commit();
