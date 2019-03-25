@@ -1,4 +1,4 @@
-package net.ddns.bivor.group14_inclass07;
+package net.ddns.bivor.group14_inclass08;
 
 import org.junit.Test;
 

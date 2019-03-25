@@ -1,6 +1,5 @@
-package net.ddns.bivor.group14_inclass07;
+package net.ddns.bivor.group14_inclass08;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

@@ -1,4 +1,4 @@
-package net.ddns.bivor.group14_inclass07;
+package net.ddns.bivor.group14_inclass08;
 
 public interface FragmentCommunication {
     void respond (Expense expense);

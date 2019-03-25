@@ -1,4 +1,4 @@
-package net.ddns.bivor.group14_inclass07;
+package net.ddns.bivor.group14_inclass08;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("net.ddns.bivor.group14_inclass07", appContext.getPackageName());
+        assertEquals("net.ddns.bivor.group14_inclass08", appContext.getPackageName());
     }
 }

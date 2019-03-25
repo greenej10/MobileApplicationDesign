@@ -1,7 +1,6 @@
-package net.ddns.bivor.group14_inclass07;
+package net.ddns.bivor.group14_inclass08;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class Expense implements Serializable {
