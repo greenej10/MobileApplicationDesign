@@ -1,4 +1,4 @@
-package com.example.a800709620_inclass08;
+package net.ddns.bivor.inclass08;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link OnFragmentInteractionListener} interface
+ * {@link ShowExpense.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link ShowExpense#newInstance} factory method to
  * create an instance of this fragment.
@@ -27,6 +27,7 @@ public class ShowExpense extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     Expense expense;
+    int index;
 
     private OnFragmentInteractionListener mListener;
 
@@ -48,6 +49,7 @@ public class ShowExpense extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             expense = (Expense) getArguments().getSerializable("EXPENSE_KEY");
+            index = (Integer) getArguments().getInt("INDEX_KEY");
         }
     }
 
@@ -86,17 +88,17 @@ public class ShowExpense extends Fragment {
         String d = ft.format(expense.date);
         textViewDate.setText(d.substring(3,5)+"/"+d.substring(0,2)+"/"+d.substring(6,10));
 
-        getActivity().findViewById(R.id.buttonEdit).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         getActivity().findViewById(R.id.buttonClose).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.goToExpenseFromShow();
+            }
+        });
+
+        getActivity().findViewById(R.id.buttonEdit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.goToEditExpenseFromShow(expense, index);
             }
         });
     }
@@ -120,5 +122,6 @@ public class ShowExpense extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void goToExpenseFromShow();
+        void goToEditExpenseFromShow(Expense expense, int index);
     }
 }

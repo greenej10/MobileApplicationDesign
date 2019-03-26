@@ -1,15 +1,10 @@
 package com.example.a800709620_inclass08;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -86,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
     }
+
 
     @Override
     public void goToExpenseFromShow() {
