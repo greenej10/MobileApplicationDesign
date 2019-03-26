@@ -1,15 +1,7 @@
-package com.example.a800709620_inclass08;
+package net.ddns.bivor.a800709620_inclass08;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -18,9 +10,6 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
 
     public static final ArrayList<Expense> expenses = new ArrayList<>();
     public static final ArrayList<Expense> selectedExpenses = new ArrayList<>();
-    public FirebaseDatabase database;
-    public DatabaseReference myRef;
-// ...
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,30 +17,9 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
         setContentView(R.layout.activity_main);
         setTitle("Expense App");
 
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("expenses");
+        //expenses = new ArrayList<>();
 
-
-        /* myRef.addValueEventListener(new ValueEventListener() {
-
-            @Override
-           public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    // TODO: handle the post
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                //Log.w("loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        });*/
-
-
-
-            getSupportFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();
 
     }
@@ -81,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements ExpenseAppFragmen
     @Override
     public void goToExpenseOnAdd(Expense expense) {
         expenses.add(expense);
-        myRef.setValue(expenses);
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ExpenseAppFragment(), "tag_expenseApp").commit();

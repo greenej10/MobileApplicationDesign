@@ -18,4 +18,7 @@
     <string name="expenseAppCurrentExpenses">Current Expenses:</string>
     <string name="expenseButton1">Add</string>
     <string name="ExpenseMessage">There is no expense to show, Please add your expenses from the menu.</string>
+    <string name="strEdit">Edit</string>
+    <string name="strEditExpense">Edit an Expense</string>
+    <string name="strEditExpense2">Edit Expense</string>
 </resources>
