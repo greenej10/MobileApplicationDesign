@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "net.ddns.bivor.inclass08"
+        applicationId "net.ddns.bivor.group14_hw05"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -29,5 +29,6 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.android.support:design:28.0.0'
 }
-apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
+apply plugin: 'com.google.gms.google-services'
