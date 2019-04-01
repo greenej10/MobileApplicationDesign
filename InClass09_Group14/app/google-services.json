@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "824661588233",
+    "firebase_url": "https://inclass09-group14.firebaseio.com",
+    "project_id": "inclass09-group14",
+    "storage_bucket": "inclass09-group14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824661588233:android:7dd435e76c4df931",
+        "android_client_info": {
+          "package_name": "net.ddns.bivor.inclass09_group14"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824661588233-n0jpj6rnl7h9rkj77p9oac8t94fvbafj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.ddns.bivor.inclass09_group14",
+            "certificate_hash": "951007f17065cf84027d1aab71877371ef16d5b5"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPRWsZo2ljkxCw7GxlvmuM8BVPsZxLSjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824661588233-pqg4draqgkr2pajbpf2ujea9gitokdfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
