@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import static com.example.a800709620_inclass08.MainActivity.expenses;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +44,7 @@ public class ExpenseAppFragment extends Fragment {
         // 2. set layoutManger
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mAdapter = new ExpenseAdapter(MainActivity.expenses, communication);
+        mAdapter = new ExpenseAdapter(expenses, communication);
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
 
@@ -55,7 +57,7 @@ public class ExpenseAppFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         getActivity().setTitle("Expense App");
 
-        if(MainActivity.expenses.size()>0)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.INVISIBLE);
+        if(expenses.size()>0)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.INVISIBLE);
         getActivity().findViewById(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +98,7 @@ public class ExpenseAppFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void goToAddExpense();
+        void deleteExpense();
         public void goToShowExpense(Expense expense);
     }
     FragmentCommunication communication=new FragmentCommunication() {
@@ -112,9 +115,10 @@ public class ExpenseAppFragment extends Fragment {
         }
 
         public void delete(Expense expense){
-            MainActivity.expenses.remove(expense);
+            expenses.remove(expense);
             mAdapter.notifyDataSetChanged();
-            if(MainActivity.expenses.size()<1)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.VISIBLE);
+            if(expenses.size()<1)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.VISIBLE);
+            mListener.deleteExpense();
         }
 
     };

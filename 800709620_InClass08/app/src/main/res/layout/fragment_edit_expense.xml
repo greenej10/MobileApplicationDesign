@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddExpenseFragment">
+    tools:context=".EditExpenseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:id="@+id/textViewAddExpenseTitle"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/strEditExpense"
-        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,16 +29,18 @@
         android:layout_marginTop="8dp"
         android:text="@string/expenseName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAddExpenseTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextAddExpenseName"
-        android:layout_width="match_parent"
+        android:id="@+id/editTextEditExpenseName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -51,16 +52,18 @@
         android:layout_marginTop="8dp"
         android:text="@string/addExpenseCategory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddExpenseName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditExpenseName" />
 
     <TextView
-        android:id="@+id/textViewAddExpenseSelectCategory"
-        android:layout_width="match_parent"
+        android:id="@+id/textViewEditExpenseSelectCategory"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/addExpenseSelectCategory"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -72,39 +75,40 @@
         android:layout_marginTop="32dp"
         android:text="@string/addExpenseAmount"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAddExpenseSelectCategory" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditExpenseSelectCategory" />
 
     <EditText
-        android:id="@+id/editTextAddExpenseAmount"
-        android:layout_width="match_parent"
+        android:id="@+id/editTextEditExpenseAmount"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/buttonAddExpense"
+        android:id="@+id/buttonEditSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:text="@string/strEditExpense2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddExpenseAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditExpenseAmount" />
 
     <Button
-        android:id="@+id/buttonCancel"
+        android:id="@+id/buttonEditCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
         android:text="@string/addExpenseButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonAddExpense"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddExpenseAmount" />
-
+        app:layout_constraintStart_toEndOf="@+id/buttonEditSave"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditExpenseAmount" />
 </android.support.constraint.ConstraintLayout>
