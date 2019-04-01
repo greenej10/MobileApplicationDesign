@@ -1,57 +1,49 @@
 package net.ddns.bivor.group14_hw05;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DisplayExpenseFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class DisplayExpenseFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Expense expense;
+    int index;
 
+    TextView textViewDisplayName, textViewDisplayCost, textViewDisplayDate;
+    ImageView imageViewDisplayReceipt;
+    Button buttonClose;
+    ProgressBar pb;
+
+    private OnFragmentInteractionListener mListener;
 
     public DisplayExpenseFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DisplayExpenseFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DisplayExpenseFragment newInstance(String param1, String param2) {
-        DisplayExpenseFragment fragment = new DisplayExpenseFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            expense = (Expense) getArguments().getSerializable("EXPENSE_KEY");
+            index =  getArguments().getInt("INDEX_KEY");
         }
     }
 
@@ -59,7 +51,75 @@ public class DisplayExpenseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_expense, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_display_expense, container, false);
+
+        textViewDisplayName = rootView.findViewById(R.id.textViewDisplayName);
+        textViewDisplayCost = rootView.findViewById(R.id.textViewDisplayCost);
+        textViewDisplayDate = rootView.findViewById(R.id.textViewDisplayDate);
+        imageViewDisplayReceipt = rootView.findViewById(R.id.imageViewDisplayReceipt);
+        buttonClose = rootView.findViewById(R.id.buttonClose);
+        buttonClose.setEnabled(false);
+        pb = rootView.findViewById(R.id.progressBarDisplay);
+        pb.setVisibility(View.INVISIBLE);
+
+        textViewDisplayName.setText(expense.name);
+        textViewDisplayCost.setText("$ "+ expense.cost);
+        textViewDisplayDate.setText(expense.datePicked);
+
+        pb.setVisibility(View.VISIBLE);
+        Picasso.get().load(expense.imageURL).into(imageViewDisplayReceipt, new Callback() {
+            @Override
+            public void onSuccess() {
+                pb.setVisibility(View.INVISIBLE);
+                buttonClose.setEnabled(true);
+            }
+
+            @Override
+            public void onError(Exception e) {
+                pb.setVisibility(View.INVISIBLE);
+                buttonClose.setEnabled(true);
+                Toast.makeText(getActivity(), "No Image Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
+
+        buttonClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.goToExpenseFromShow();
+            }
+        });
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void goToExpenseFromShow();
     }
 
 }

@@ -3,60 +3,38 @@ package net.ddns.bivor.group14_hw05;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ExpenseFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ExpenseFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     private OnFragmentInteractionListener mListener;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter mAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    TextView textViewTotalExpenseValue;
 
     public ExpenseFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ExpenseFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ExpenseFragment newInstance(String param1, String param2) {
-        ExpenseFragment fragment = new ExpenseFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -65,12 +43,41 @@ public class ExpenseFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_expense, container, false);
+        // 1. get a reference to recyclerView
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
 
+        // 2. set layoutManger
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        mAdapter = new ExpenseAdapter(MainActivity.expenses, communication);
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
+        textViewTotalExpenseValue = rootView.findViewById(R.id.textViewTotalExpenseValue);
+
+        double total = 0.0;
+        for(Expense expense: MainActivity.expenses){
+            total+= Double.parseDouble(expense.cost);
+        }
+        textViewTotalExpenseValue.setText("$"+total);
 
         return rootView;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle("Expense Manager");
 
+        if(MainActivity.expenses.size()>0)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.INVISIBLE);
+
+        getActivity().findViewById(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.goToAddExpense();
+            }
+        });
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -93,6 +100,36 @@ public class ExpenseFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void goToAddExpense();
-        public void goToShowExpense(Expense expense);
     }
+
+    FragmentCommunication communication=new FragmentCommunication() {
+        @Override
+        public void respond(Expense expense, int index) {
+            DisplayExpenseFragment displayExpense=new DisplayExpenseFragment();
+            Bundle bundle=new Bundle();
+            bundle.putSerializable("EXPENSE_KEY",expense);
+            bundle.putInt("INDEX_KEY", index);
+            displayExpense.setArguments(bundle);
+            FragmentManager manager=getFragmentManager();
+            FragmentTransaction transaction=manager.beginTransaction();
+            transaction.replace(R.id.container,displayExpense)
+                    .addToBackStack(null).commit();
+        }
+
+        public void delete(Expense expense){
+            MainActivity.expenses.remove(expense);
+            mAdapter.notifyDataSetChanged();
+            if(MainActivity.expenses.size()<1)getActivity().findViewById(R.id.textViewExpenseMessage).setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        public void respondEdit(Expense expense, int index) {
+            EditExpenseFragment editExpenseFragment = new EditExpenseFragment(expense, index);
+            FragmentManager manager=getFragmentManager();
+            FragmentTransaction transaction=manager.beginTransaction();
+            transaction.replace(R.id.container,editExpenseFragment)
+                    .addToBackStack(null).commit();
+        }
+
+    };
 }
