@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder>{
+
     ArrayList<Expense> mData;
     private FragmentCommunication mCommunicator;
 
