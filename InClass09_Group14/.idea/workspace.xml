@@ -10,32 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/ChatRoomAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/ChatRoomFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/FragmentCommunication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/LoginFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/SignUpFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/fragment_chat_room.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/message_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java" afterDir="false" />
-    </list>
+    <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2406,9 +2381,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="190" />
-    <option name="y" value="200" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="140" />
+    <option name="y" value="20" />
     <option name="width" value="1400" />
     <option name="height" value="970" />
   </component>
@@ -2629,8 +2604,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23020135" />
