@@ -11,46 +11,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/google-services.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/androidTest/java/net/ddns/bivor/group14_hw06/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/test/java/net/ddns/bivor/group14_hw06/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_HW06/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/ChatRoomAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/ChatRoomFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/FragmentCommunication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/LoginFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/SignUpFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/fragment_chat_room.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/message_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,25 +58,26 @@
     <session id="932024562">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="7" />
-          <entry key="java" value="18" />
+          <entry key="gradle" value="9" />
+          <entry key="java" value="26" />
           <entry key="json" value="1" />
-          <entry key="xml" value="18" />
+          <entry key="xml" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="7" />
-          <entry key="JAVA" value="18" />
+          <entry key="Groovy" value="9" />
+          <entry key="JAVA" value="26" />
           <entry key="JSON" value="1" />
-          <entry key="XML" value="18" />
+          <entry key="XML" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -118,25 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="33" column="43" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/SignUpFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-61">
-              <caret line="112" column="89" selection-start-line="112" selection-start-column="89" selection-end-line="112" selection-end-column="89" />
-              <folding>
-                <element signature="e#1943#2108#0" expanded="true" />
-                <element signature="e#2107#2108#0" expanded="true" />
-                <element signature="e#2182#3273#0" expanded="true" />
-                <element signature="e#4162#4420#0" expanded="true" />
-                <element signature="e#4419#4420#0" expanded="true" />
-                <element signature="e#3272#3273#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1267">
+              <caret line="54" column="15" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="54" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -144,13 +112,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/LoginFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+            <state relative-caret-position="-753">
+              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="109" selection-end-column="51" />
               <folding>
-                <element signature="e#1880#2794#0" expanded="true" />
-                <element signature="e#2935#3890#0" expanded="true" />
-                <element signature="e#3889#3890#0" expanded="true" />
-                <element signature="e#2793#2794#0" expanded="true" />
+                <element signature="e#2050#2206#0" expanded="true" />
+                <element signature="e#2205#2206#0" expanded="true" />
+                <element signature="e#2249#3905#0" expanded="true" />
+                <element signature="e#3904#3905#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/SignUpFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="124" column="70" lean-forward="true" selection-start-line="124" selection-start-column="70" selection-end-line="124" selection-end-column="70" />
+              <folding>
+                <element signature="e#4628#5870#0" expanded="true" />
+                <element signature="e#5869#5870#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="121" column="72" lean-forward="true" selection-start-line="115" selection-start-column="12" selection-end-line="121" selection-end-column="72" />
+              <folding>
+                <element signature="e#3454#3952#0" expanded="true" />
+                <element signature="e#3951#3952#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,77 +153,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/CreateContactFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="53" />
+            <state relative-caret-position="133">
+              <caret line="141" column="52" selection-start-line="141" selection-start-column="52" selection-end-line="141" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2729#3392#0" expanded="true" />
-                <element signature="e#3391#3392#0" expanded="true" />
-                <element signature="e#3436#6492#0" expanded="true" />
-                <element signature="e#5219#6401#0" expanded="true" />
-                <element signature="e#6400#6401#0" expanded="true" />
-                <element signature="e#6491#6492#0" expanded="true" />
+                <element signature="e#5367#6255#0" expanded="true" />
+                <element signature="e#6254#6255#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="121" column="72" selection-start-line="121" selection-start-column="72" selection-end-line="121" selection-end-column="72" />
-              <folding>
-                <element signature="e#2198#2364#0" expanded="true" />
-                <element signature="e#2363#2364#0" expanded="true" />
-                <element signature="e#2411#2631#0" expanded="true" />
-                <element signature="e#2630#2631#0" expanded="true" />
-                <element signature="e#3345#3678#0" expanded="true" />
-                <element signature="e#3677#3678#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="6" column="64" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
+              <caret line="6" column="64" selection-start-line="4" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
             </state>
           </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="14" selection-end-column="19" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+            <state relative-caret-position="240">
+              <caret line="42" column="79" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#646#647#0" expanded="true" />
-                <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#2324#2522#0" expanded="true" />
-                <element signature="e#2521#2522#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2440,13 +2401,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/CreateContactFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/OnFragmentListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="191" />
+    <option name="x" value="190" />
     <option name="y" value="200" />
     <option name="width" value="1400" />
     <option name="height" value="970" />
@@ -2459,6 +2420,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2491,19 +2454,7 @@
               <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
@@ -2513,7 +2464,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2530,7 +2480,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2698,8 +2647,8 @@
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.18181819" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.18181819" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -2733,21 +2682,13 @@
     <entry file="file://$PROJECT_DIR$/app/google-services.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -2760,31 +2701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1320">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-          <folding>
-            <element signature="e#619#641#0" expanded="true" />
-            <element signature="e#1155#1176#0" expanded="true" />
-            <element signature="e#1712#1730#0" expanded="true" />
-            <element signature="e#2270#2291#0" expanded="true" />
-            <element signature="e#2872#2900#0" expanded="true" />
-            <element signature="e#3513#3532#0" expanded="true" />
-            <element signature="e#4094#4113#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2813,47 +2729,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_create_contact.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-80">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contact_item.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/CreateContactFragment.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2729#3392#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3436#6492#0" expanded="true" />
-            <element signature="e#5219#6401#0" expanded="true" />
-            <element signature="e#6400#6401#0" expanded="true" />
-            <element signature="e#6491#6492#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/SignUpFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="112" column="89" selection-start-line="112" selection-start-column="89" selection-end-line="112" selection-end-column="89" />
-          <folding>
-            <element signature="e#1943#2108#0" expanded="true" />
-            <element signature="e#2107#2108#0" expanded="true" />
-            <element signature="e#2182#3273#0" expanded="true" />
-            <element signature="e#4162#4420#0" expanded="true" />
-            <element signature="e#4419#4420#0" expanded="true" />
-            <element signature="e#3272#3273#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="6" column="64" selection-start-line="4" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/OnFragmentListener.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2862,74 +2762,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+        <state relative-caret-position="240">
+          <caret line="42" column="79" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#2324#2522#0" expanded="true" />
-            <element signature="e#2521#2522#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/LoginFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-          <folding>
-            <element signature="e#1880#2794#0" expanded="true" />
-            <element signature="e#2935#3890#0" expanded="true" />
-            <element signature="e#3889#3890#0" expanded="true" />
-            <element signature="e#2793#2794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="33" column="43" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="121" column="72" selection-start-line="121" selection-start-column="72" selection-end-line="121" selection-end-column="72" />
-          <folding>
-            <element signature="e#2198#2364#0" expanded="true" />
-            <element signature="e#2363#2364#0" expanded="true" />
-            <element signature="e#2411#2631#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#3345#3678#0" expanded="true" />
-            <element signature="e#3677#3678#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" selection-end-column="46" />
+          <caret line="39" selection-start-line="39" selection-end-line="39" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/SignUpFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="64" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
+        <state relative-caret-position="233">
+          <caret line="124" column="70" lean-forward="true" selection-start-line="124" selection-start-column="70" selection-end-line="124" selection-end-column="70" />
+          <folding>
+            <element signature="e#4628#5870#0" expanded="true" />
+            <element signature="e#5869#5870#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/LoginFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-753">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="109" selection-end-column="51" />
+          <folding>
+            <element signature="e#2050#2206#0" expanded="true" />
+            <element signature="e#2205#2206#0" expanded="true" />
+            <element signature="e#2249#3905#0" expanded="true" />
+            <element signature="e#3904#3905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1267">
+          <caret line="54" column="15" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="54" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Android/AndroidSDK/sources/android-27/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="529" column="19" selection-start-line="529" selection-start-column="19" selection-end-line="529" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/CreateContactFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="141" column="52" selection-start-line="141" selection-start-column="52" selection-end-line="141" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5367#6255#0" expanded="true" />
+            <element signature="e#6254#6255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/ContactFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="121" column="72" lean-forward="true" selection-start-line="115" selection-start-column="12" selection-end-line="121" selection-end-column="72" />
+          <folding>
+            <element signature="e#3454#3952#0" expanded="true" />
+            <element signature="e#3951#3952#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
