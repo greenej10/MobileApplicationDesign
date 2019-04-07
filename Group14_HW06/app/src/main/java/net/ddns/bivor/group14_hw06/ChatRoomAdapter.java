@@ -44,7 +44,7 @@ public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.ViewHo
             holder.textViewMessage.setText(message.message);
             holder.textViewMessageFirstName.setText(message.firstName);
             holder.textViewMessagePrettyTime.setText(p.format(message.prettyTime));
-            if(message.imageURL=="NO_IMAGE")holder.imageViewMessage.setVisibility(View.GONE);
+            if(message.imageURL.equals("NO_IMAGE"))holder.imageViewMessage.setVisibility(View.GONE);
             else{
                 holder.imageViewMessage.setVisibility(View.VISIBLE);
                 Picasso.get().load(message.imageURL).into(holder.imageViewMessage);

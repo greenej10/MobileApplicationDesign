@@ -30,26 +30,29 @@ SignUpFragment.OnFragmentInteractionListener, ChatRoomFragment.OnFragmentInterac
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser()!=null){
-            mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+//            mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+//
+//
+//            mDatabase.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    messages.clear();
+//                    for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
+//                        Message message = expenseSnap.getValue(Message.class);
+//                        messages.add(message);
+//                    }
+//                    getSupportFragmentManager().beginTransaction()
+//                            .add(R.id.container, new ChatRoomFragment(messages), "tag_chat").commit();
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//                    Toast.makeText(getApplicationContext(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
+//                }
+//            });
 
-
-            mDatabase.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    messages.clear();
-                    for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
-                        Message message = expenseSnap.getValue(Message.class);
-                        messages.add(message);
-                    }
-                    getSupportFragmentManager().beginTransaction()
+            getSupportFragmentManager().beginTransaction()
                             .add(R.id.container, new ChatRoomFragment(messages), "tag_chat").commit();
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
-                }
-            });
 
         }
         else {
@@ -64,7 +67,7 @@ SignUpFragment.OnFragmentInteractionListener, ChatRoomFragment.OnFragmentInterac
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new LoginFragment(), "tag_login")
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 .commit();
     }
 
@@ -104,34 +107,39 @@ SignUpFragment.OnFragmentInteractionListener, ChatRoomFragment.OnFragmentInterac
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new SignUpFragment(), "tag_signup")
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 .commit();
     }
 
     @Override
     public void goToChatFromLogin() {
-        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+//        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+//
+//
+//        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                messages.clear();
+//                for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
+//                    Message message = expenseSnap.getValue(Message.class);
+//                    messages.add(message);
+//                }
+//                getSupportFragmentManager().popBackStack();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.container, new ChatRoomFragment(messages), "tag_chat")
+//                        .commit();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(getApplicationContext(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
-
-        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                messages.clear();
-                for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
-                    Message message = expenseSnap.getValue(Message.class);
-                    messages.add(message);
-                }
-                getSupportFragmentManager().popBackStack();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new ChatRoomFragment(messages), "tag_chat")
-                        .commit();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new ChatRoomFragment(messages), "tag_chat")
+                .commit();
 
     }
 
@@ -140,17 +148,43 @@ SignUpFragment.OnFragmentInteractionListener, ChatRoomFragment.OnFragmentInterac
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new LoginFragment(), "tag_login")
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 .commit();
     }
 
     @Override
     public void goToChatFromSignup() {
+//        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+//
+//
+//        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                messages.clear();
+//                for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
+//                    Message message = expenseSnap.getValue(Message.class);
+//                    messages.add(message);
+//                }
+//                getSupportFragmentManager().popBackStack();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.container, new ChatRoomFragment(messages), "tag_chat")
+////                        .addToBackStack(null)
+//                        .commit();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(getApplicationContext(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ChatRoomFragment(messages), "tag_chat")
-                .addToBackStack(null)
+//                        .addToBackStack(null)
                 .commit();
+
+
     }
 
     @Override

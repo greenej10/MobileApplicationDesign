@@ -13,6 +13,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +41,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.EventListener;
 import java.util.UUID;
 
 
@@ -131,7 +133,32 @@ public class ChatRoomFragment extends Fragment {
             }
         });
 
+
+
         return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+
+        mDatabase.addListenerForSingleValueEvent(listener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+        mDatabase.removeEventListener(listener);
+    }
+
+    @Override
+    public void onAttachFragment(Fragment childFragment) {
+        super.onAttachFragment(childFragment);
+
+
     }
 
     @Override
@@ -162,7 +189,7 @@ public class ChatRoomFragment extends Fragment {
                 if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_DENIED)
                 {
-                    ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_PERMISSIONS_REQUEST );
+                    requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_PERMISSIONS_REQUEST );
                     imageViewAddImage.setEnabled(true);
                     imageViewLogout.setEnabled(true);
                     imageViewSendMessage.setEnabled(true);
@@ -378,6 +405,29 @@ public class ChatRoomFragment extends Fragment {
             DatabaseReference mDatabase;
             mDatabase = FirebaseDatabase.getInstance().getReference("messages");
             mDatabase.setValue(MainActivity.messages);
+        }
+    };
+
+
+    private ValueEventListener listener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            MainActivity.messages.clear();
+            for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
+                Message message = expenseSnap.getValue(Message.class);
+                MainActivity.messages.add(message);
+            }
+
+            Fragment frg = getFragmentManager().findFragmentByTag("tag_chat");
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.detach(frg);
+            ft.attach(frg);
+            ft.commit();
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+            Toast.makeText(getActivity(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
         }
     };
 }
