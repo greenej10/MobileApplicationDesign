@@ -10,10 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/ChatRoomFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/ChatRoomFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_HW06/app/src/main/java/net/ddns/bivor/group14_hw06/MainActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
