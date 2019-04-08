@@ -11,56 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/androidTest/java/net/ddns/bivor/group14_ic10/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/DisplayNoteFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/FragmentCommunication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/LoginFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NoteAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NotesFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/SignUpFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_add_note.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_display_note.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_notes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/test/java/net/ddns/bivor/group14_ic10/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/note_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_add_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_add_note.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_display_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_display_note.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_notes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_notes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -2625,6 +2583,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16375838" />
