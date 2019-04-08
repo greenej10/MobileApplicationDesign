@@ -12,4 +12,7 @@
     <string name="hintChoosePassword">Choose Password</string>
     <string name="hintRepeatPassword">Repeat Password</string>
     <string name="hintType">Type message to send...</string>
+    <string name="buttonAddNote">Add Note</string>
+    <string name="buttonPostNote">Post Note</string>
+    <string name="buttonClose">Close</string>
 </resources>
