@@ -10,7 +10,59 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="" />
+    <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/androidTest/java/net/ddns/bivor/group14_ic10/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/DisplayNoteFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/FragmentCommunication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/LoginFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NoteAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NotesFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/SignUpFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_add_note.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_display_note.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_notes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/test/java/net/ddns/bivor/group14_ic10/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Group14_IC10/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +131,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+            <state relative-caret-position="620">
               <caret line="54" column="15" selection-start-line="36" selection-start-column="12" selection-end-line="54" selection-end-column="15" />
             </state>
           </provider>
@@ -2367,10 +2419,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="140" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="970" />
+    <option name="x" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -2401,6 +2452,21 @@
       <pane id="AndroidView">
         <subPane>
           <expand>
+            <path>
+              <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
             <path>
               <item name="InClass09_Group14" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -2558,11 +2624,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="10" width="1120" height="776" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23018868" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16375838" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -2576,7 +2641,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.18064517" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.16422288" />
       <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -2708,7 +2773,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/inclass09_group14/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="620">
           <caret line="54" column="15" selection-start-line="36" selection-start-column="12" selection-end-line="54" selection-end-column="15" />
         </state>
       </provider>
