@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -73,7 +75,7 @@ public class ChatRoomFragment extends Fragment {
 
     private FirebaseStorage storage = FirebaseStorage.getInstance();
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase, mDatabase2;
 
     private ArrayList<String> currentUser;      // keeping the info of current user. 0 - firstName 1- lastName 2- Email 3- Password
 
@@ -133,33 +135,40 @@ public class ChatRoomFragment extends Fragment {
             }
         });
 
+        mDatabase2 = FirebaseDatabase.getInstance().getReference("messages");
 
+        mDatabase2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                MainActivity.messages.clear();
+                for( DataSnapshot expenseSnap: dataSnapshot.getChildren()){
+                    Message message = expenseSnap.getValue(Message.class);
+                    MainActivity.messages.add(message);
+                }
+                mAdapter.notifyDataSetChanged();
+//                Fragment frg = getFragmentManager().findFragmentByTag("tag_chat");
+//                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                ft.detach(frg);
+//                ft.attach(frg);
+//                ft.commit();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getActivity(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return rootView;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
-
-        mDatabase.addListenerForSingleValueEvent(listener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
-        mDatabase.removeEventListener(listener);
-    }
-
-    @Override
-    public void onAttachFragment(Fragment childFragment) {
-        super.onAttachFragment(childFragment);
-
-
-    }
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//
+//        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+//        mDatabase.removeEventListener(listener);
+//    }
 
     @Override
     public void onDestroyView() {
@@ -208,87 +217,93 @@ public class ChatRoomFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(editTextChatMessage.getText().toString().isEmpty()&&FLAG==0){
-                    Toast.makeText(getActivity(), "Nothing to send", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    imageViewAddImage.setEnabled(false);
-                    imageViewLogout.setEnabled(false);
-                    imageViewSendMessage.setEnabled(false);
-
-                    final String messageInput = editTextChatMessage.getText().toString();
-
-                    if(FLAG==1){
-                        imageViewAddImage.setDrawingCacheEnabled(true);
-                        imageViewAddImage.buildDrawingCache();
-                        Bitmap bitmap = imageViewAddImage.getDrawingCache();
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
-                        imageViewAddImage.setDrawingCacheEnabled(false);
-                        byte[] data = baos.toByteArray();
-
-                        String path ="messages/" + UUID.randomUUID() + ".png";
-                        final StorageReference messageRef = storage.getReference(path);
-
-                        UploadTask uploadTask = messageRef.putBytes(data);
-                        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                imageViewAddImage.setEnabled(true);
-                                imageViewLogout.setEnabled(true);
-                                imageViewSendMessage.setEnabled(true);
-
-                                messageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
-                                        message.message = messageInput;
-                                        message.imageURL = ""+uri;
-                                        message.firstName = currentUser.get(1);
-                                        message.prettyTime = new Date();
-
-                                        MainActivity.messages.add(message);
-                                        mAdapter.notifyDataSetChanged();
-
-                                        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
-                                        mDatabase.setValue(MainActivity.messages);
-
-                                        editTextChatMessage.setText("");
-                                        imageViewAddImage.setImageResource(R.drawable.addimage);
-                                        FLAG=0;
-
-                                       // mListener.goToMainAndComeBackToChat(message);
-                                    }
-                                });
-
-                            }
-                        });
+                if(isConnected()){
+                    if(editTextChatMessage.getText().toString().isEmpty()&&FLAG==0){
+                        Toast.makeText(getActivity(), "Nothing to send", Toast.LENGTH_SHORT).show();
                     }
-                    else {          //When there is no image but just text
-                        message.message = messageInput;
-                        message.imageURL = "NO_IMAGE";
-                        message.firstName = currentUser.get(1);
-                        message.prettyTime = new Date();
+                    else {
+                        imageViewAddImage.setEnabled(false);
+                        imageViewLogout.setEnabled(false);
+                        imageViewSendMessage.setEnabled(false);
 
-                        MainActivity.messages.add(message);
-                        mAdapter.notifyDataSetChanged();
+                        final String messageInput = editTextChatMessage.getText().toString();
 
-                        mDatabase = FirebaseDatabase.getInstance().getReference("messages");
-                        mDatabase.setValue(MainActivity.messages);
+                        if(FLAG==1){
+                            imageViewAddImage.setDrawingCacheEnabled(true);
+                            imageViewAddImage.buildDrawingCache();
+                            Bitmap bitmap = imageViewAddImage.getDrawingCache();
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                            bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
+                            imageViewAddImage.setDrawingCacheEnabled(false);
+                            byte[] data = baos.toByteArray();
 
-                        editTextChatMessage.setText("");
-                        imageViewAddImage.setImageResource(R.drawable.addimage);
-                        FLAG=0;
+                            String path ="messages/" + UUID.randomUUID() + ".png";
+                            final StorageReference messageRef = storage.getReference(path);
 
-                        imageViewAddImage.setEnabled(true);
-                        imageViewLogout.setEnabled(true);
-                        imageViewSendMessage.setEnabled(true);
+                            UploadTask uploadTask = messageRef.putBytes(data);
+                            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                    imageViewAddImage.setEnabled(true);
+                                    imageViewLogout.setEnabled(true);
+                                    imageViewSendMessage.setEnabled(true);
 
-                        //mListener.goToMainAndComeBackToChat(message);
+                                    messageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            message.message = messageInput;
+                                            message.imageURL = ""+uri;
+                                            message.firstName = currentUser.get(1);
+                                            message.prettyTime = new Date();
+
+                                            MainActivity.messages.add(message);
+                                            mAdapter.notifyDataSetChanged();
+
+                                            mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+                                            mDatabase.setValue(MainActivity.messages);
+
+                                            editTextChatMessage.setText("");
+                                            imageViewAddImage.setImageResource(R.drawable.addimage);
+                                            FLAG=0;
+
+                                            // mListener.goToMainAndComeBackToChat(message);
+                                        }
+                                    });
+
+                                }
+                            });
+                        }
+                        else {          //When there is no image but just text
+                            message.message = messageInput;
+                            message.imageURL = "NO_IMAGE";
+                            message.firstName = currentUser.get(1);
+                            message.prettyTime = new Date();
+
+                            MainActivity.messages.add(message);
+                            mAdapter.notifyDataSetChanged();
+
+                            mDatabase = FirebaseDatabase.getInstance().getReference("messages");
+                            mDatabase.setValue(MainActivity.messages);
+
+                            editTextChatMessage.setText("");
+                            imageViewAddImage.setImageResource(R.drawable.addimage);
+                            FLAG=0;
+
+                            imageViewAddImage.setEnabled(true);
+                            imageViewLogout.setEnabled(true);
+                            imageViewSendMessage.setEnabled(true);
+
+                            //mListener.goToMainAndComeBackToChat(message);
+
+                        }
+
 
                     }
-
-
                 }
+                else{
+                    Toast.makeText(getActivity(), "No Internet Connection", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
@@ -420,9 +435,9 @@ public class ChatRoomFragment extends Fragment {
 
             Fragment frg = getFragmentManager().findFragmentByTag("tag_chat");
             final FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.detach(frg);
-            ft.attach(frg);
-            ft.commit();
+//            ft.detach(frg);
+//            ft.attach(frg);
+//            ft.commit();
         }
 
         @Override
@@ -430,4 +445,17 @@ public class ChatRoomFragment extends Fragment {
             Toast.makeText(getActivity(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
         }
     };
+
+    public boolean isConnected(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if(networkInfo == null || !networkInfo.isConnected() ||
+                (networkInfo.getType()!=ConnectivityManager.TYPE_WIFI
+                        && networkInfo.getType()!=ConnectivityManager.TYPE_MOBILE)){
+            return false;
+        }
+        return true;
+
+    }
+
 }
