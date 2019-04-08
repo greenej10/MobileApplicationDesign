@@ -128,6 +128,6 @@ public class LoginFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void goToSignupFromLogin();
-        void goToChatFromLogin();
+        void goToNotesFromLogin();
     }
 }
