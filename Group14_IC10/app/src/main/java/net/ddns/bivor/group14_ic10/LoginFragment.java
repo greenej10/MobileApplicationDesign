@@ -3,10 +3,13 @@ package net.ddns.bivor.group14_ic10;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -16,6 +19,9 @@ import android.view.ViewGroup;
  * to handle interaction events.
  */
 public class LoginFragment extends Fragment {
+
+    Button buttonLogInLogIn, buttonLogInSignUp;
+    EditText editTextLogInEmail, editTextLogInPassword;
 
     private OnFragmentInteractionListener mListener;
 
@@ -28,14 +34,55 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+
+        editTextLogInEmail = rootView.findViewById(R.id.editTextLoginEmail);
+        editTextLogInPassword = rootView.findViewById(R.id.editTextLoginPassword);
+        buttonLogInLogIn = rootView.findViewById(R.id.buttonLoginLogin);
+        buttonLogInSignUp = rootView.findViewById(R.id.buttonLoginSignUp);
+
+        return rootView;
+
+
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().setTitle("Login");
+
+        buttonLogInSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.goToSignupFromLogin();
+            }
+        });
+
+        buttonLogInLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonLogInLogIn.setEnabled(false);
+                buttonLogInSignUp.setEnabled(false);
+
+                final String email = editTextLogInEmail.getText().toString().trim();
+                final String password = editTextLogInPassword.getText().toString();
+
+                if(email.isEmpty()){
+                    editTextLogInEmail.setError("Enter Email");
+                }
+                else if(password.isEmpty()){
+                    editTextLogInPassword.setError("Enter Password");
+                }
+                else {
+
+                }
+
+                buttonLogInLogIn.setEnabled(true);
+                buttonLogInSignUp.setEnabled(true);
+
+            }
+        });
+
     }
 
     @Override
@@ -67,6 +114,7 @@ public class LoginFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void goToSignupFromLogin();
+        void goToNotesFromLogin();
     }
 }
