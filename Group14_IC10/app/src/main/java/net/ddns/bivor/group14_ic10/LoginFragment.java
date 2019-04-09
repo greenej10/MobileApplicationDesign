@@ -11,6 +11,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,7 +84,30 @@ public class LoginFragment extends Fragment {
                     editTextLogInPassword.setError("Enter Password");
                 }
                 else {
+                    OkHttpClient client = new OkHttpClient();
 
+                    RequestBody formBody = new FormBody.Builder()
+                            .add("email", email)
+                            .add("password", password)
+                            .build();
+
+                    Request request = new Request.Builder()
+                            .url("http://ec2-3-91-77-16.compute-1.amazonaws.com:3000/api/auth/login")
+                            .header("Content-Type","application/x-www-form-urlencoded")
+                            .post(formBody)
+                            .build();
+
+                    client.newCall(request).enqueue(new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
+
+                        }
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+
+                        }
+                    });
                 }
 
                 buttonLogInLogIn.setEnabled(true);

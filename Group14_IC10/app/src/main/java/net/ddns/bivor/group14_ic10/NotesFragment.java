@@ -4,9 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -19,6 +23,13 @@ public class NotesFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    private Note note;
+
+    ArrayList<Note> notes;
+
+    RecyclerView recyclerView;
+    RecyclerView.Adapter mAdapter;
+
     public NotesFragment() {
         // Required empty public constructor
     }
@@ -28,15 +39,26 @@ public class NotesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notes, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_notes, container, false);
+
+// 1. get a reference to recyclerView
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+
+        // 2. set layoutManger
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setStackFromEnd(true);
+        linearLayoutManager.setRecycleChildrenOnDetach(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        mAdapter = new NoteAdapter(MainActivity.notes, communication);
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
+        note = new Note();
+
+        return  rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -55,18 +77,20 @@ public class NotesFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+   FragmentCommunication communication = new FragmentCommunication() {
+       @Override
+       public void goToDisplayNote(Note note) {
+
+       }
+
+       @Override
+       public void deleteNote(Note note) {
+
+       }
+   };
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+      void goToAddNotesFromNotes();
     }
 }
