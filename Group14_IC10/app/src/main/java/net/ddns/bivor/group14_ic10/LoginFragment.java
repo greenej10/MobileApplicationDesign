@@ -1,6 +1,7 @@
 package net.ddns.bivor.group14_ic10;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -20,6 +25,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 
 /**
@@ -100,12 +106,45 @@ public class LoginFragment extends Fragment {
                     client.newCall(request).enqueue(new Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
-
+                            Toast.makeText(getActivity(), ""+e.toString(), Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
                         }
 
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
+                            try (ResponseBody responseBody = response.body()) {
+                                if (!response.isSuccessful()) {
+                                    Toast.makeText(getActivity(), "Failed to Authorize", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    String jsonData = responseBody.string();
+                                    JSONObject jsonObject = new JSONObject(jsonData);
 
+                                    if(jsonObject.getString("token").equals("null")){
+                                        if(getActivity()!=null){
+                                            getActivity().runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Toast.makeText(getActivity(), "Failed to Authorize", Toast.LENGTH_SHORT).show();
+                                                    return;
+                                                }
+                                            });
+                                        }
+
+                                    }
+                                    else {
+                                        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPref.edit();
+                                        editor.putString("TOKEN", jsonObject.getString("token"));
+                                        editor.apply();
+                                        mListener.goToNotesFromLogin();
+                                    }
+
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
                     });
                 }

@@ -11,6 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -34,12 +38,12 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnF
         setContentView(R.layout.activity_main);
 
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        int defaultValue = 100;
-        int highScore = sharedPref.getInt("TOKEN", 110);
+        String defaultValue = "100";
+        String highScore = sharedPref.getString("TOKEN", defaultValue);
 
         if(isConnected()){
 
-            if(highScore==defaultValue){
+            if(highScore.equals(defaultValue)){
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.container, new LoginFragment(), "tag_login").commit();
             }
@@ -48,33 +52,53 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnF
 
                 OkHttpClient client = new OkHttpClient();
 
-                Request request = new Request.Builder()
-                        .url("http://ec2-3-91-77-16.compute-1.amazonaws.com:3000/api/note/getall")
-                        .header("x-access-token",""+highScore)
-                        .build();
+            Request request = new Request.Builder()
+                    .url("http://ec2-3-91-77-16.compute-1.amazonaws.com:3000/api/note/getall")
+                    .header("x-access-token",""+highScore)
+                    .build();
 
-                client.newCall(request).enqueue(new Callback() {
-                    @Override public void onFailure(Call call, IOException e) {
-                        Toast.makeText(MainActivity.this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+            client.newCall(request).enqueue(new Callback() {
+                @Override public void onFailure(Call call, IOException e) {
+                    Toast.makeText(MainActivity.this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+
+                @Override public void onResponse(Call call, Response response) throws IOException {
+                    try (ResponseBody responseBody = response.body()) {
+                        if (!response.isSuccessful()){
+                            getSupportFragmentManager().beginTransaction()
+                                    .add(R.id.container, new LoginFragment(), "tag_login").commit();
+                        }
+                        else {
+                            notes.clear();
+
+                            String jsonData = responseBody.string();
+                            JSONObject jsonObject = new JSONObject(jsonData);
+                            JSONArray jsonArray = jsonObject.getJSONArray("notes");
+
+                            for(int i=0;i<jsonArray.length();i++){
+                                JSONObject object = jsonArray.getJSONObject(i);
+                                Note note = new Note();
+
+                                note.id = object.getString("_id");
+                                note.userID = object.getString("userId");
+                                note.text = object.getString("text");
+                                note.__v = object.getInt("__v");
+
+                                notes.add(note);
+                            }
+
+                            getSupportFragmentManager().beginTransaction()
+                                    .add(R.id.container, new NotesFragment(), "tag_notes").commit();
+                        }
+
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
+                }
+            });
 
-                    @Override public void onResponse(Call call, Response response) throws IOException {
-                        try (ResponseBody responseBody = response.body()) {
-                            if (!response.isSuccessful()){
-                                getSupportFragmentManager().beginTransaction()
-                                        .add(R.id.container, new LoginFragment(), "tag_login").commit();
-                            }
-                            else {
-                                getSupportFragmentManager().beginTransaction()
-                                        .add(R.id.container, new NotesFragment(), "tag_notes").commit();
-                            }
-
-                        }
-                    }
-                });
-
-            }
+        }
 
         }
         else {
@@ -117,16 +141,67 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnF
     public void goToSignupFromLogin() {
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new LoginFragment(), "tag_login")
+                .replace(R.id.container, new SignUpFragment(), "tag_signup")
                 .commit();
     }
 
     @Override
     public void goToNotesFromLogin() {
-        getSupportFragmentManager().popBackStack();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new NotesFragment(), "tag_notes")
-                .commit();
+
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String defaultValue = "100";
+        String highScore = sharedPref.getString("TOKEN", defaultValue);
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("http://ec2-3-91-77-16.compute-1.amazonaws.com:3000/api/note/getall")
+                .header("x-access-token", highScore)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override public void onFailure(Call call, IOException e) {
+                Toast.makeText(MainActivity.this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+            @Override public void onResponse(Call call, Response response) throws IOException {
+                try (ResponseBody responseBody = response.body()) {
+                    if (!response.isSuccessful()){
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new LoginFragment(), "tag_login").commit();
+                    }
+                    else {
+                        notes.clear();
+
+                        String jsonData = responseBody.string();
+                        JSONObject jsonObject = new JSONObject(jsonData);
+                        JSONArray jsonArray = jsonObject.getJSONArray("notes");
+
+                        for(int i=0;i<jsonArray.length();i++){
+                            JSONObject object = jsonArray.getJSONObject(i);
+                            Note note = new Note();
+
+                            note.id = object.getString("_id");
+                            note.userID = object.getString("userId");
+                            note.text = object.getString("text");
+                            note.__v = object.getInt("__v");
+
+                            notes.add(note);
+                        }
+
+                        getSupportFragmentManager().popBackStack();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, new NotesFragment(), "tag_notes")
+                                .commit();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 
     @Override
@@ -155,15 +230,131 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnF
     }
 
     @Override
-    public void goToNotesFromAddNotes() {
+    public void goToLoginFromNotes() {
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new NotesFragment(), "tag_notes")
+                .replace(R.id.container, new LoginFragment(), "tag_login")
                 .commit();
     }
 
     @Override
+    public void goToMainAndComeBackToNotes() {
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String defaultValue = "100";
+        String highScore = sharedPref.getString("TOKEN", defaultValue);
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("http://ec2-3-91-77-16.compute-1.amazonaws.com:3000/api/note/getall")
+                .header("x-access-token", highScore)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override public void onFailure(Call call, IOException e) {
+                Toast.makeText(MainActivity.this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+            @Override public void onResponse(Call call, Response response) throws IOException {
+                try (ResponseBody responseBody = response.body()) {
+                    if (!response.isSuccessful()){
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new LoginFragment(), "tag_login").commit();
+                    }
+                    else {
+                        notes.clear();
+
+                        String jsonData = responseBody.string();
+                        JSONObject jsonObject = new JSONObject(jsonData);
+                        JSONArray jsonArray = jsonObject.getJSONArray("notes");
+
+                        for(int i=0;i<jsonArray.length();i++){
+                            JSONObject object = jsonArray.getJSONObject(i);
+                            Note note = new Note();
+
+                            note.id = object.getString("_id");
+                            note.userID = object.getString("userId");
+                            note.text = object.getString("text");
+                            note.__v = object.getInt("__v");
+
+                            notes.add(note);
+                        }
+                        getSupportFragmentManager().popBackStack();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, new NotesFragment(), "tag_notes")
+                                .commit();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void goToNotesFromAddNotes() {
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String defaultValue = "100";
+        String highScore = sharedPref.getString("TOKEN", defaultValue);
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("http://ec2-3-91-77-16.compute-1.amazonaws.com:3000/api/note/getall")
+                .header("x-access-token", highScore)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override public void onFailure(Call call, IOException e) {
+                Toast.makeText(MainActivity.this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+            @Override public void onResponse(Call call, Response response) throws IOException {
+                try (ResponseBody responseBody = response.body()) {
+                    if (!response.isSuccessful()){
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new LoginFragment(), "tag_login").commit();
+                    }
+                    else {
+                        notes.clear();
+
+                        String jsonData = responseBody.string();
+                        JSONObject jsonObject = new JSONObject(jsonData);
+                        JSONArray jsonArray = jsonObject.getJSONArray("notes");
+
+                        for(int i=0;i<jsonArray.length();i++){
+                            JSONObject object = jsonArray.getJSONObject(i);
+                            Note note = new Note();
+
+                            note.id = object.getString("_id");
+                            note.userID = object.getString("userId");
+                            note.text = object.getString("text");
+                            note.__v = object.getInt("__v");
+
+                            notes.add(note);
+                        }
+
+                        getSupportFragmentManager().popBackStack();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, new NotesFragment(), "tag_notes")
+                                .commit();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+    @Override
     public void goToNotesFromDisplayNote() {
+
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new NotesFragment(), "tag_notes")

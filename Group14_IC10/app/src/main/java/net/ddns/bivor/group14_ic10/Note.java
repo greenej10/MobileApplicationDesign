@@ -1,6 +1,8 @@
 package net.ddns.bivor.group14_ic10;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
 
     String id,userID,text;
     int __v;

@@ -34,6 +34,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>{
         Note note =mData.get(i);
         viewHolder.note = note;
         viewHolder.textViewNote.setText(note.text);
+        viewHolder.selectedIndex = i;
     }
 
     @Override
@@ -45,6 +46,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>{
 
         TextView textViewNote;
         ImageView imageViewDelete;
+
+        int selectedIndex;
 
         Note note;
 
@@ -64,11 +67,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     imageViewDelete.setEnabled(false);
-                    mCommunication.deleteNote(note);
+                    mCommunication.deleteNote(note, selectedIndex);
                 }
             });
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            textViewNote.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mCommunication.goToDisplayNote(note);

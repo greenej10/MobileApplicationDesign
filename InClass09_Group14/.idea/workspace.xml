@@ -11,30 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ee06175-c0ed-4c6d-bd6b-1ba9de39e228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/Group14_IC10.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/Group14_IC10.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/DisplayNoteFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/DisplayNoteFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/FragmentCommunication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/FragmentCommunication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/LoginFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NoteAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NoteAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NotesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/NotesFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/SignUpFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/java/net/ddns/bivor/group14_ic10/SignUpFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_notes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_notes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_add_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_add_note.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -2392,7 +2385,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
@@ -2587,8 +2580,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16375838" />
