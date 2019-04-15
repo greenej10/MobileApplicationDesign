@@ -11,47 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5be78073-9649-4625-990a-99d8963677e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/androidTest/java/net/ddns/bivor/group14_inclass11/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/java/net/ddns/bivor/group14_inclass11/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/test/java/net/ddns/bivor/group14_inclass11/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Group14_InClass11/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InClass09_Group14/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../InClass09_Group14/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/java/net/ddns/bivor/group14_inclass11/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/java/net/ddns/bivor/group14_inclass11/MainActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -181,10 +142,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3420">
+            <state relative-caret-position="980">
               <caret line="195" column="42" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
             </state>
           </provider>
@@ -212,7 +173,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1940">
+            <state relative-caret-position="133">
               <caret line="123" selection-start-line="123" selection-end-line="123" />
             </state>
           </provider>
@@ -276,6 +237,22 @@
             <path>
               <item name="Group14_IC10" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Group14_IC10" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Group14_IC10" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="group14_ic10" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Group14_IC10" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="Group14_IC10" type="1abcf292:AndroidViewProjectNode" />
@@ -437,7 +414,7 @@
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49655172" visible="true" weight="0.2536913" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49655172" visible="true" weight="0.2536913" />
       <window_info id="Structure" order="3" sideWeight="0.50344825" side_tool="true" weight="0.2536913" />
       <window_info id="Build Variants" order="4" sideWeight="0.50344825" side_tool="true" weight="0.2536913" />
       <window_info id="Image Layers" order="5" />
@@ -449,7 +426,7 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32991204" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="6" visible="true" weight="0.3240469" />
+      <window_info active="true" anchor="bottom" id="Build" order="6" visible="true" weight="0.17155425" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info active="true" anchor="bottom" id="Debug" order="8" weight="0.09530792" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -696,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3420">
-          <caret line="195" column="42" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -718,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1940">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -732,6 +695,20 @@
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/group14_ic10/AddNoteFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/ddns/bivor/group14_ic10/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="195" column="42" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
