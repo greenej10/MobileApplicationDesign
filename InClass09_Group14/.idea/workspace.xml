@@ -39,6 +39,8 @@
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/note_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/src/main/res/layout/note_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Group14_IC10/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_IC10/app/app.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +64,7 @@
     <session id="932024562">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.32" value="1" />
@@ -2600,7 +2603,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+
     <editor active="true" />
+
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16375838" />
@@ -2660,9 +2665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
