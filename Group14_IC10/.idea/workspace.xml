@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5be78073-9649-4625-990a-99d8963677e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/java/net/ddns/bivor/group14_inclass11/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Group14_InClass11/app/src/main/java/net/ddns/bivor/group14_inclass11/MainActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="5" column="65" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="65" />
+              <caret line="5" column="65" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="65" />
             </state>
           </provider>
           <provider editor-type-id="android-manifest" />
@@ -218,10 +217,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="12" />
+    <option name="width" value="1553" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -409,7 +408,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -691,7 +690,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="65" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="65" />
+          <caret line="5" column="65" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
