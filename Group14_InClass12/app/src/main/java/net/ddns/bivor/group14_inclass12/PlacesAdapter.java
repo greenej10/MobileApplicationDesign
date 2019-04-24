@@ -5,17 +5,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.ViewHolder>{
+public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder>{
 
-    ArrayList<Trip> mData;
+    ArrayList<Place> mData;
     private FragmentCommunication mCommunicator;
 
-    public TripsAdapter(ArrayList<Trip> mData, FragmentCommunication mCommunicator) {
+    public PlacesAdapter(ArrayList<Place> mData, FragmentCommunication mCommunicator) {
         this.mData = mData;
         this.mCommunicator = mCommunicator;
     }
@@ -30,11 +29,11 @@ public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Trip trip = mData.get(position);
-        holder.trip = trip;
-        holder.textView.setText(trip.destination.name);
+        Place place = mData.get(position);
+        holder.place = place;
+        holder.places = mData;
         holder.selectedIndex = position;
-        holder.trips = mData;
+        holder.textView.setText(place.name);
     }
 
     @Override
@@ -45,9 +44,9 @@ public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.ViewHolder>{
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView textView;
-        Trip trip;
+        Place place;
         int selectedIndex;
-        ArrayList<Trip> trips;
+        ArrayList<Place> places;
         FragmentCommunication mCommunication;
 
         public ViewHolder(@NonNull final View itemView, FragmentCommunication Communicator) {
@@ -63,7 +62,7 @@ public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.ViewHolder>{
 
         @Override
         public void onClick(View v) {
-            mCommunication.goToShowTripfromTrip(trip);
+            mCommunication.respond(place,selectedIndex);
         }
 
     }

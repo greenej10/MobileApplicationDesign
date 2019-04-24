@@ -12,9 +12,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements TripsFragment.OnFragmentInteractionListener, AddTripFragment.OnFragmentInteractionListener,
+AddPlacesFragment.OnFragmentInteractionListener, ShowTripFragment.OnFragmentInteractionListener{
 
     public static final ArrayList<Trip> trips = new ArrayList<>();
     private DatabaseReference mDatabase;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("expenses");
+        mDatabase = FirebaseDatabase.getInstance().getReference("trips");
 
         trips.clear();
 
@@ -45,5 +46,40 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), databaseError.toException().toString(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void goToTripFromAddPlaces() {
+
+        mDatabase.setValue(trips);
+        getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new TripsFragment(), "tag_trips")
+                .commit();
+    }
+
+    @Override
+    public void goToAddTripFromAddPlaces() {
+        getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new AddTripFragment(), "tag_addTrip")
+                .commit();
+    }
+
+    @Override
+    public void goToAddTripFromTrip() {
+        getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new AddTripFragment(), "tag_addTrip")
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void goToTripsFromShowTrip() {
+        getSupportFragmentManager().popBackStack();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new TripsFragment(), "tag_trips")
+                .commit();
     }
 }

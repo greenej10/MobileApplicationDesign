@@ -1,12 +1,16 @@
 package net.ddns.bivor.group14_inclass12;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class Trip {
+public class Trip implements Serializable {
 
     String tripName;
-    Place destination;
-    ArrayList<Place> places;
+    Place destination = new Place();
+    ArrayList<Place> places = new ArrayList<>();
+    Date date;
+    String datePicked;
 
     public Trip() {
     }
